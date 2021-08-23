@@ -1,5 +1,6 @@
 import categoryRoute from "./category.route.js";
 import foodRoute from "./food.route.js";
+import authRoute from "./auth.route.js";
 
 const router = (app) => {
     app.get("/", (req, res) => {
@@ -15,6 +16,7 @@ const router = (app) => {
 
     app.use("/categories", categoryRoute);
     app.use("/foods", foodRoute);
+    app.use("/auth", authRoute);
 };
 
 export default router;
