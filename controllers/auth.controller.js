@@ -5,7 +5,7 @@ import jwt from "jsonwebtoken";
 class UserController {
     static login = async (req, res) => {
         const { username, password } = req.body;
-        console.log(username, password)
+        console.log(username, password);
         try {
             const user = await User.findOne({ username: username });
             if (!user) {
@@ -27,7 +27,7 @@ class UserController {
                         },
                         process.env.JWT_SECRET,
                         {
-                            expiresIn: "30s",
+                            expiresIn: "1 day",
                         }
                     );
 
